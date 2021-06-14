@@ -1,0 +1,152 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background: #4e54c8;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #8f94fb, #4e54c8);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  padding: 24px;
+}
+
+.header {
+  max-width: 540px;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.header .header__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #125d98;
+  padding: 8px;
+  text-align: center;
+  min-height: 48px;
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.form {
+  padding: 24px;
+  background-color: #ddd;
+}
+
+.form__campo {
+  margin-bottom: 16px;
+}
+
+.form__label {
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+.form__input {
+  display: block;
+  height: 48px;
+  width: 100%;
+  border: 1px solid #888;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.form__input::placeholder {
+  font-size: 16px;
+}
+
+.form__input:focus {
+  outline: 1px solid #3c8dad;
+  border-radius: 0px;
+}
+
+.form__submit {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #125d98;
+  color: white;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.form__submit:hover {
+  cursor: pointer;
+}
+
+.main {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.main__ul {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.main__item {
+  flex: 1 1 auto;
+  max-width: 100%;
+  height: 240px;
+  border: 2px solid #125d98;
+}
+
+.main__img {
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pagination {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.pagination__link {
+  text-decoration: none;
+  height: 42px;
+  width: 42px;
+  border: 1px solid #8f94fb;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms;
+}
+
+.pagination__link:not(.pagination__link:first-of-type) {
+  margin-left: 16px;
+}
+
+.pagination__link--active,
+.pagination__link:hover {
+  color: white;
+  background-color: #3c8dad;
+}
+/*# sourceMappingURL=styles.css.map */
