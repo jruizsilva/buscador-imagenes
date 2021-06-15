@@ -21,7 +21,7 @@ const limpiarPaginacion = () => {
 const cambiarPaginaActual = (e) => {
 	if (e.target.classList.contains("pagination__link")) {
 		const $link = e.target;
-		currentPage = $link.getAttribute("data-page");
+		currentPage = parseInt($link.getAttribute("data-page"));
 		consultarAPI();
 	}
 };
@@ -36,13 +36,18 @@ const mostrarPaginacion = () => {
 	const $template = d.getElementById("templatePagination").content;
 	const iterador = generadorPaginacion();
 	while (true) {
-		const { done, value } = iterador.next();
+		const { value, done } = iterador.next();
 		if (done) {
 			return;
 		}
 		const $link = $template.querySelector(".pagination__link");
-		$link.textContent = value;
 		$link.dataset.page = value;
+		$link.textContent = value;
+		if (value === currentPage) {
+			$link.classList.add("pagination__link--active");
+		} else {
+			$link.classList.remove("pagination__link--active");
+		}
 		const $clone = $template.cloneNode(true);
 		$pagination.appendChild($clone);
 		$pagination.addEventListener("click", cambiarPaginaActual);
@@ -72,7 +77,7 @@ const calcularPaginas = (imagenes) => {
 export const consultarAPI = () => {
 	const busqueda = d.getElementById("busqueda").value;
 
-	const requestURL = `${url}?key=${key}&q=${busqueda}&image_type=photo&lang=es&per_page=${imagenesPorPagina}&page=${currentPage}`;
+	const requestURL = `${url}?key=${key}&q=${busqueda}&image_type=photo&lang=es&per_page=${imagenesPorPagina}&page=${currentPage}&safesearch=true`;
 
 	fetch(requestURL)
 		.then((res) => {
