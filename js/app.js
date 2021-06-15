@@ -6,7 +6,5 @@ const $formulario = d.getElementById("formulario");
 
 $formulario.addEventListener("submit", (e) => {
 	e.preventDefault();
-	const category = $formulario.category.value;
-
-	consultarAPI(category);
+	consultarAPI();
 });

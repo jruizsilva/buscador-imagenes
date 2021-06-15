@@ -20,12 +20,12 @@
 			<form action="" class="form" id="formulario">
 				<div class="form__campo">
 					<label for="category" class="form__label"
-						>Categoria a buscar</label
+						>Imagen a buscar</label
 					>
 					<input
 						type="text"
 						name="category"
-						id="category"
+						id="busqueda"
 						class="form__input"
 						placeholder="Ingresa la categoria a buscar"
 						required
@@ -40,22 +40,16 @@
 		</header>
 		<main class="main">
 			<ul class="main__ul" id="result"></ul>
-			<nav class="pagination" id="pagination">
-				<a
-					href="#"
-					value="1"
-					class="pagination__link pagination__link--active"
-					>1</a
-				><a href="#" value="2" class="pagination__link">2</a
-				><a href="#" value="3" class="pagination__link">3</a
-				><a href="#" value="4" class="pagination__link">4</a>
-			</nav>
+			<nav class="pagination" id="pagination"></nav>
 		</main>
 
 		<template id="templateItem">
 			<li class="main__item">
 				<img src="" alt="" class="main__img" />
 			</li>
+		</template>
+		<template id="templatePagination">
+			<a href="#" class="pagination__link" data-page=""></a>
 		</template>
 		<script src="js/app.js" type="module"></script>
 	</body>

@@ -126,12 +126,15 @@ body {
 	color: #ddd;
 	@include center();
 	transition: all 300ms;
+	&:not(.pagination__link:first-of-type) {
+		margin-left: 16px;
+	}
+	&:hover {
+		color: white;
+		background-color: #3c8dad;
+	}
 }
-.pagination__link:not(.pagination__link:first-of-type) {
-	margin-left: 16px;
-}
-.pagination__link--active,
-.pagination__link:hover {
+.pagination__link--active {
 	color: white;
 	background-color: #3c8dad;
 }
