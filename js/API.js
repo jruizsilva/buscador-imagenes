@@ -22,7 +22,7 @@ const cambiarPaginaActual = (e) => {
 	if (e.target.classList.contains("pagination__link")) {
 		const $link = e.target;
 		currentPage = parseInt($link.getAttribute("data-page"));
-		consultarAPI();
+		consultarAPI(currentPage);
 	}
 };
 
@@ -74,8 +74,10 @@ const mostrarHTML = (hits) => {
 const calcularPaginas = (imagenes) => {
 	cantidadPaginas = Math.ceil(imagenes / imagenesPorPagina);
 };
-export const consultarAPI = () => {
+export const consultarAPI = (page) => {
 	const busqueda = d.getElementById("busqueda").value;
+
+	if(!page) currentPage = 1;
 
 	const requestURL = `${url}?key=${key}&q=${busqueda}&image_type=photo&lang=es&per_page=${imagenesPorPagina}&page=${currentPage}&safesearch=true`;
 
